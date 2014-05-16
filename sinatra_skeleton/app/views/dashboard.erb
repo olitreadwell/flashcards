@@ -1,0 +1,12 @@
+
+<h3> <%= "#{@user['username']}'s Dashboard" %> </h3>
+
+<ul>
+	<% @decks.each do |deck| %>
+		<li><a href="#"><%=deck.title%></a></li>
+	<% end %>
+</ul>
+
+
+<a href="#"> Manage Decks </a>
+<a href="/logout"> Logout </a>
