@@ -2,7 +2,7 @@ enable :sessions
 
 post '/signup' do
   @user = User.new(username: params[:username],
-                                    password: params[:password])
+                                   password: params[:password])
 
   if @user.save
     give_token
