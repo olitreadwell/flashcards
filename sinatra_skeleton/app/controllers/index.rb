@@ -1,4 +1,5 @@
 get '/' do
-  # Look in app/views/index.erb
+	@user = User.find_by_id(session[:id])
+	@decks = Deck.all
   erb :index
 end
