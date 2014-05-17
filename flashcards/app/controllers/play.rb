@@ -8,7 +8,6 @@ get '/play/:deck_id' do
 end
 
 post '/play' do
-  # @card_array = params[:card_array]
   @deck = Deck.find(params[:deck_id])
   @cards = @deck.cards
   @round = Round.find(params[:round_id])
@@ -23,5 +22,4 @@ post '/play' do
                correct: correct)
 
   erb :play
-  # redirects "/play/#{@deck.id}"
 end

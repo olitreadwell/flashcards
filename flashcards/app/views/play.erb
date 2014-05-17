@@ -1,30 +1,15 @@
 
 <h3> (Play Page) </h3>
 
-<!-- we want an array of all cards in deck == @cards -->
-<!-- we want pick a random card form the deck and display its question -->
-<!-- we want to pass the user's answer to post /play -->
-
 <h3><%= @deck[:title] %></h3>
 
 <% card_to_display = @cards.shuffle.pop %>
-
-
-<!--Begin Legacy Code from Previous Game Logic Attempt -->
-<%#unless @card_array %>
-  <%# @card_array = @cards.shuffle %>
-<%# end %>
-<%# card_to_display = @card_array.pop %>
-<!-- End Legacy Code -->
-
-
 <p><%=card_to_display[:question]%></p>
 
 <form method="post" action="/play">
   <input type="text" name="user_guess" placeholder="Your Guess">
   <input type="hidden" name="deck_id" value="<%= @deck.id %>">
   <input type="hidden" name="card_id" value="<%= card_to_display.id %>">
-  <!-- <input type="hidden" name="card_array" value="<%# @card_array %>"> -->
   <input type="hidden" name="round_id" value="<%= @round.id %>">
   <input type="submit" value="Confirm!">
 </form>
