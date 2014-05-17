@@ -1,38 +1,18 @@
 
 <h3> (Play Page) </h3>
+
 <h3><%= @deck[:title] %></h3>
 
-<% unless @card_array %>
-  <% @card_array = @cards.shuffle %>
-<% end %>
-
-<% card_to_display = @card_array.pop %>
-
+<% card_to_display = @cards.shuffle.pop %>
 <p><%=card_to_display[:question]%></p>
 
 <form method="post" action="/play">
   <input type="text" name="user_guess" placeholder="Your Guess">
   <input type="hidden" name="deck_id" value="<%= @deck.id %>">
   <input type="hidden" name="card_id" value="<%= card_to_display.id %>">
-  <input type="hidden" name="card_array" value="<% @card_array %>">
-
   <input type="hidden" name="round_id" value="<%= @round.id %>">
-
   <input type="submit" value="Confirm!">
 </form>
 
 
-
-<!-- On results page, -->
-
-<!-- THE WAY WE WILL ACCESS THIS ROUNDS "CORRECTNESS"... -->
-<!-- Is through the "guess" join table -->
-<!-- Which stores card_id and round_id (which we now have both) -->
-
-<!-- display total score i.e. 6/10 -->
-<!-- number of cards with correct(attr) = true out of number of total cards -->
-<!-- AND... -->
-<!-- display each question in a table -->
-  <!-- if the cards correct(attr) if true -->
-    <!-- make text color green -->
-    <!-- else, make it ren -->
+<a href="/results">Quit Playing</a>
