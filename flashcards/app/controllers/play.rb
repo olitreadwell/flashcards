@@ -8,8 +8,7 @@ get '/play/:deck_id' do
 end
 
 post '/play' do
-  @card_array = params[:card_array]
-  p params
+  # @card_array = params[:card_array]
   @deck = Deck.find(params[:deck_id])
   @round_id = params[:round_id]
 
