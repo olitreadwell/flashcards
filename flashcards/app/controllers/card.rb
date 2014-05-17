@@ -1,5 +1,6 @@
 get '/card_manager/:deck_id' do
   @cards = Card.where(deck_id: params[:deck_id])
+  @deck = Deck.find(params[:deck_id])
   erb :card_manager
 end
 
