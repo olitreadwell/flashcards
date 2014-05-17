@@ -1,5 +1,4 @@
-<div class="container">
-  <h1>Card Manager</h1>
+<h1>Card Manager</h1>
 
   <h2>Current Cards in Deck:</h2>
     <table>
@@ -7,18 +6,16 @@
         <th>Question</th>
         <th>Answer</th>
       </tr>
-      <tr>
         <% @cards.each do |card| %>
-          <td><%= card.question %></td>
-          <td><%= card.answer %></td>
+          <tr>
+            <td><%= card.question %></td>
+            <td><%= card.answer %></td>
+          </tr>
         <% end %>
-      </tr>
     </table>
 
-  <form method="post" action="/card_manager">
+  <form method="post" action="/card_manager/<%= @deck.id %>">
     <input type="text" name="question">
     <input type="text" name="answer">
     <input type="submit" value="Add Card to Deck!">
   </form>
-
-</div>

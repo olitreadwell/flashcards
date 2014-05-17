@@ -3,7 +3,7 @@
 
 <ul>
 	<% @decks.each do |deck| %>
-		<li><a href="#"><%=deck.title%></a></li>
+		<li><a href="/play/<%=deck[:id]%>"><%=deck.title%></a></li>
 	<% end %>
 </ul>
 
