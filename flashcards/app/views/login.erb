@@ -1,14 +1,26 @@
 
   <h2>Login</h2>
-  <form method="post" action="/login">
-    Username: <input type="text" name="username" ><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="Log In">
+  <form role="form" method="post" action="/login">
+    <div class="form-group">
+      <label for="exampleInputUsername1">Username:</label>
+      <input type="text" class="form-control" id="exampleInputUsername1" name="username" placeholder="Enter Username"><!-- <br> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter Password"><!-- <br> -->
+    </div>
+     <button type="submit" class="btn btn-success" >Login</button>
   </form>
 
   <h2>Sign Up</h2>
-  <form method="post" action="/signup" >
-    Username: <input type="text" name="username" ><br>
-    Password: <input type="password" name="password" ><br>
-    <input type="submit" value="Sign Up" >
+  <form role="form"  method="post" action="/signup" >
+    <div class="form-group">
+      <label for="exampleInputUsername2">Username: </label>
+      <input type="text" class="form-control" id="exampleInputUsername2" name="username" placeholder="Enter Username"><!-- <br> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword2">Password: </label>
+      <input type="password" class="form-control" id="exampleInputPassword2" name="password" placeholder="Enter Password"><!-- <br> -->
+    </div>
+    <button type="submit" class="btn btn-success" >Sign Up</button>
   </form>
