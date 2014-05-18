@@ -1,4 +1,20 @@
-// $(document).ready(function() {
+$(function () {
+    // $("#homePageLogin, #homePageSignUp").hide();
+    $("#homePageLoginButton").click(function(event){
+        event.preventDefault;
+        $("#homePageLogin").toggleClass("hidden");
+        $("#homePageSignUp").addClass("hidden");
+        $("#homePageLogin").css( "clear", "both" );
+    });
+
+    $("#homePageSignUpButton").click(function(event){
+        event.preventDefault;
+        $("#homePageSignUp").toggleClass("hidden");
+        $("#homePageLogin").addClass("hidden");
+        $("#homePageSignUp").css( "clear", "both" );
+
+    });
+});
 
 //     // when the page loads
 //     // console.log you clicked on the header when that occurs
@@ -25,4 +41,3 @@
     // when we try to bind to them
 
     // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
