@@ -18,3 +18,10 @@ post '/card_manager/:deck_id' do
   redirect "/card_manager/#{@deck.id}"
 
 end
+
+post '/card_manager/:deck_id/:card_id' do
+  @deck = Deck.find(params[:deck_id])
+  @card = Card.find(params[:card_id])
+  @card.destroy
+  redirect "/card_manager/#{@deck.id}"
+end

@@ -5,7 +5,7 @@ User.create(username:"admin",
 
 # seed ruby terminology deck
 
-ruby_deck =  Deck.create(title: "Ruby Terminology")
+ruby_deck =  Deck.create(title: "Ruby Terminology", user_id: 1)
 
 flashcard_array = []
 File.open("db/ruby_terminology.txt").readlines.each do |line|

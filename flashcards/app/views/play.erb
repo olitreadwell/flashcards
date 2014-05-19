@@ -1,18 +1,17 @@
-
-<h3> (Play Page) </h3>
+<h2> Play Game! </h3>
 
 <h3><%= @deck[:title] %></h3>
 
-<% card_to_display = @cards.shuffle.pop %>
-<p><%=card_to_display[:question]%></p>
+<p><%= @dealt_card.question %></p>
+
 
 <form method="post" action="/play">
   <input id="userinputfield" type="text" name="user_guess" placeholder="Your Guess">
   <input type="hidden" name="deck_id" value="<%= @deck.id %>">
-  <input type="hidden" name="card_id" value="<%= card_to_display.id %>">
+  <input type="hidden" name="card_id" value="<%= @dealt_card.id %>">
   <input type="hidden" name="round_id" value="<%= @round.id %>">
   <input id="UserGuessInputSubmit" type="submit" value="Confirm!">
 </form>
 
 
-<a href="/results">Quit Playing</a>
+<a href="/results/<%= @round.id %>">Quit Playing</a>

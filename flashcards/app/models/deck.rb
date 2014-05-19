@@ -1,5 +1,7 @@
 class Deck < ActiveRecord::Base
-  # belongs_to :author
+  validates :title, presence: true
+
+  belongs_to :user #author
   has_many :rounds
   has_many :cards
 end

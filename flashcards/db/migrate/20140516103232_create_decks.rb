@@ -3,7 +3,7 @@ class CreateDecks < ActiveRecord::Migration
     create_table :decks do |t|
       t.string :title
       # t.string :subject
-      # t.integer :author #user_id
+      t.integer :user_id # author
       t.timestamps
     end
   end
