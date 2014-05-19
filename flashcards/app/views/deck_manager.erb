@@ -1,18 +1,27 @@
 <h1>Deck Manager</h1>
 
-  <h2>My Decks</h2>
-  <ul>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Your Created Decks</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @decks.each do |deck| %>
-    <li><a href="/card_manager/<%=deck.id%>"><%=deck.title%></a></li>
+    <tr>
+      <td><a href="/card_manager/<%=deck.id%>"><%=deck.title%></a></td>
+    </tr>
     <% end %>
-  </ul>
-
+  </tbody>
+</table>
+    <tr></tr>
+  </table>
 
   <h2>Create Deck</h2>
-  <form method="post" action="/deck_manager">
-    <input type="text" name="title">
-    <input type="submit" value="Create Deck!">
+  <form method="post" action="/deck_manager" role="form">
+  <div class="form-group">
+    <label for="exampleInputDeckTitle1">Deck Title</label>
+    <input type="text" class="form-control" id="exampleInputDeckTitle1" name="title" placeholder="Enter Deck Title">
+  </div>
+    <button type="submit" class="btn btn-default" >Create Deck!</button>
   </form>
-
-
-  <a href='/'>Dashboard</a>
