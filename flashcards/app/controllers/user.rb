@@ -8,7 +8,7 @@ post '/signup' do
     give_token
     redirect '/'
   else
-    # @error =
+    # @error = "Please enter a valid username and password."
   end
 
   erb :index
@@ -22,7 +22,7 @@ post '/login' do
     give_token
     redirect '/'
   else
-    # @error =
+    # @error = "Incorrect login information."
   end
 
   erb :index

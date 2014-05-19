@@ -1,7 +1,7 @@
-<h1>Card Manager</h1>
+<h1>Edit '<%= @deck.title %>' Deck</h1>
 
-  <h2>Current Cards in Deck:</h2>
-    <table>
+  <h3>Current Cards in Deck:</h3>
+    <table id="current-cards">
       <tr>
         <th>Question</th>
         <th>Answer</th>
@@ -10,12 +10,23 @@
           <tr>
             <td><%= card.question %></td>
             <td><%= card.answer %></td>
+            <td>
+              <form method="post" action="/card_manager/<%= @deck.id %>/<%= card.id %>"
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete Card">
+              </form>
+            </td>
           </tr>
         <% end %>
-    </table>
+    </table><br>
 
   <form method="post" action="/card_manager/<%= @deck.id %>">
     <input type="text" name="question">
     <input type="text" name="answer">
     <input type="submit" value="Add Card to Deck!">
+  </form><br>
+
+  <form method="post" action="/deck_manager/<%= @deck.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete This Deck">
   </form>
